@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 
@@ -280,6 +281,26 @@ public class Main extends Application {
 //        Scene scene = new Scene(root,500,500);
 //        stage.setScene(scene);
 //        stage.show();
+
+
+
+
+        //TexFlow layout
+        TextFlow root = new TextFlow();
+        Text heading = new Text("Lorem Ipsum");
+        heading.setFill(Color.BLUE);//setting font color
+        heading.setFont(Font.font("Arial", FontWeight.BOLD,18));//setting font style
+        Text paragraph = new Text("\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas enim id mauris scelerisque dapibus. Vestibulum egestas metus purus, a luctus enim commodo et. Etiam vitae pharetra nisl. Mauris rhoncus dolor in ipsum venenatis, convallis laoreet arcu iaculis. Suspendisse porttitor odio nunc, ut varius orci tempus quis. Sed iaculis, quam at lacinia iaculis, leo nisl sollicitudin nisi, id vulputate odio lectus nec nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut orci consequat ante vulputate consectetur et a nunc.");
+
+        //setting additional settings
+        root.setLineSpacing(5);
+        root.setTextAlignment(TextAlignment.CENTER);
+        root.setPrefWidth(300);
+
+        root.getChildren().addAll(heading,paragraph);
+        Scene scene = new Scene(root,500,500);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public TilePane createTilePane(Pos tileAlignment){
