@@ -37,6 +37,9 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
+
+
+
         //Horizontal Layout - organizes elements horizontally
 //        HBox hBox = new HBox();
 //        hBox.setAlignment(Pos.CENTER);
@@ -51,6 +54,9 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
+
+
+
         //Vertical Layout - organizes elements vertically
 //        VBox root = new VBox();
 //        root.setAlignment(Pos.CENTER);
@@ -63,6 +69,9 @@ public class Main extends Application {
 //        Scene scene = new Scene(root,500,500);
 //        stage.setScene(scene);
 //        stage.show();
+
+
+
 
         //FlowPane Layout - It organizes its children in rows or columns
 //        FlowPane flowPane = new FlowPane();
@@ -153,6 +162,10 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
+
+
+
+
         //TilePane - arranges in grid
 
         //#1example
@@ -164,19 +177,92 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
         //#2example
-        TilePane root = new TilePane(5,5);
-        Button b12 = new Button("One\nTwo");
-        Button b3 = new Button("Three");
-        Button b4 = new Button("Four");
-        Button b5 = new Button("Five");
-        Button b6 = new Button("Six");
+//        TilePane root = new TilePane(5,5);
+//        Button b12 = new Button("One\nTwo");
+//        Button b3 = new Button("Three");
+//        Button b4 = new Button("Four");
+//        Button b5 = new Button("Five");
+//        Button b6 = new Button("Six");
+//
+//        TilePane.setAlignment(b3,Pos.BOTTOM_RIGHT);
+//        root.getChildren().addAll(b12,b3,b4,b5,b6);
+//        root.setPrefColumns(3);
+//        Scene scene = new Scene(root,300,300);
+//        stage.setScene(scene);
+//        stage.show();
 
-        TilePane.setAlignment(b3,Pos.BOTTOM_RIGHT);
-        root.getChildren().addAll(b12,b3,b4,b5,b6);
-        root.setPrefColumns(3);
-        Scene scene = new Scene(root,300,300);
-        stage.setScene(scene);
-        stage.show();
+
+
+
+
+
+        //GridPane most complex and most powerfull
+//        GridPane root = new GridPane();
+//        root.setGridLinesVisible(true); //Use this in debugging
+
+        //example1
+//        Button b1 = new Button("One One One");
+//        Button b2 = new Button("Two");
+//        Button b3 = new Button("Three");
+
+//        GridPane.setConstraints(b1,0,0); //column,row
+//        GridPane.setConstraints(b2,1,0);
+//        GridPane.setConstraints(b3,0,1);
+
+//        root.add(b1,0,0);
+//        root.add(b2,1,0);
+//        root.add(b3,0,1);
+
+//        root.addColumn(0,b1,b3);
+//        root.addRow(0,b2);
+
+        //example2
+//        GridPane root = new GridPane();
+//        root.setGridLinesVisible(true); //Use this in debugging
+//        Label label = new Label("First Name:");
+//        TextField textField = new TextField();
+//        Button button = new Button("Comment");
+//        TextArea area = new TextArea();
+//        area.setPromptText("Enter your message");
+//
+//        root.setHgap(10);
+//        root.setVgap(10);
+//
+//        root.addRow(0,label,textField,button);
+//        root.add(area,0,1, GridPane.REMAINING,1); //it will fill space
+
+        //example3
+//        GridPane root = new GridPane();
+//        root.setGridLinesVisible(true); //Use this in debugging
+//
+//        for(int row=0; row<3; row++){
+//            for(int col=0; col<3; col++){
+//                Button b = new Button(col+ "|" + row);
+//                root.add(b,col,row);
+//            }
+//        }
+//
+//        ColumnConstraints c1 = new ColumnConstraints(100);//width of first column 100px
+//        c1.setHalignment(HPos.LEFT);
+//        ColumnConstraints c2 = new ColumnConstraints(200);
+//        c2.setHalignment(HPos.CENTER);
+//        ColumnConstraints c3 = new ColumnConstraints(200);
+//        c3.setHalignment(HPos.RIGHT);
+//
+//        RowConstraints r1 = new RowConstraints(50); //height of first column 50px
+//        r1.setValignment(VPos.TOP);
+//        RowConstraints r2 = new RowConstraints(70);
+//        r2.setValignment(VPos.CENTER);
+//        RowConstraints r3 = new RowConstraints(60);
+//
+//        //adding constraints to root
+//        root.getColumnConstraints().addAll(c1,c2,c3);
+//        root.getRowConstraints().addAll(r1,r2,r3);
+//
+//        Scene scene = new Scene(root,800,800);
+//        root.requestFocus();//we dont want anything highlited
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     public TilePane createTilePane(Pos tileAlignment){
