@@ -142,16 +142,56 @@ public class Main extends Application {
 
         //StackPane Layout - on top of each other
 
-        StackPane stackPane = new StackPane();
-        Rectangle rectangle = new Rectangle(300,250);
-        rectangle.setFill(Color.RED);
-        Label label = new Label("Rectangle");
-        StackPane.setAlignment(label,Pos.TOP_LEFT);
+//        StackPane stackPane = new StackPane();
+//        Rectangle rectangle = new Rectangle(300,250);
+//        rectangle.setFill(Color.RED);
+//        Label label = new Label("Rectangle");
+//        StackPane.setAlignment(label,Pos.TOP_LEFT);
+//
+//        stackPane.getChildren().addAll(rectangle,label);
+//        Scene scene = new Scene(stackPane,500,500);
+//        stage.setScene(scene);
+//        stage.show();
 
-        stackPane.getChildren().addAll(rectangle,label);
-        Scene scene = new Scene(stackPane,500,500);
+        //TilePane - arranges in grid
+
+        //#1example
+//        TilePane tileCenter = createTilePane(Pos.CENTER);
+//        TilePane tileLeft = createTilePane(Pos.BOTTOM_LEFT);
+//        HBox root = new HBox(10,tileCenter,tileLeft);
+//
+//        Scene scene = new Scene(root,300,300);
+//        stage.setScene(scene);
+//        stage.show();
+        //#2example
+        TilePane root = new TilePane(5,5);
+        Button b12 = new Button("One\nTwo");
+        Button b3 = new Button("Three");
+        Button b4 = new Button("Four");
+        Button b5 = new Button("Five");
+        Button b6 = new Button("Six");
+
+        TilePane.setAlignment(b3,Pos.BOTTOM_RIGHT);
+        root.getChildren().addAll(b12,b3,b4,b5,b6);
+        root.setPrefColumns(3);
+        Scene scene = new Scene(root,300,300);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public TilePane createTilePane(Pos tileAlignment){
+        Button[] buttons = new Button[]{
+                new Button("Tiles"),
+                new Button("are"),
+                new Button("aligned"),
+                new Button("at"),
+                new Button(tileAlignment.toString())
+        };
+
+        TilePane pane = new TilePane(5,5,buttons);
+        pane.setTileAlignment(tileAlignment);
+        pane.setPrefColumns(3);
+        return pane;
     }
 
     public static void main(String[] args) {
