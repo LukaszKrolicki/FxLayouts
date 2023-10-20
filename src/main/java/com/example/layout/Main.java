@@ -263,6 +263,23 @@ public class Main extends Application {
 //        root.requestFocus();//we dont want anything highlited
 //        stage.setScene(scene);
 //        stage.show();
+
+
+
+        //AnchorPane - you can stick to edges
+//        AnchorPane root = new AnchorPane();
+//        Button buttonRight = new Button("BottomRight");
+//        Button buttonLeft = new Button("TopLeft");
+//        //setting constraints
+//        AnchorPane.setBottomAnchor(buttonRight,20.0);
+//        AnchorPane.setRightAnchor(buttonRight,10.0);
+//
+//        AnchorPane.setTopAnchor(buttonLeft,10.0);
+//        AnchorPane.setLeftAnchor(buttonLeft,10.0);
+//        root.getChildren().addAll(buttonLeft,buttonRight);
+//        Scene scene = new Scene(root,500,500);
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     public TilePane createTilePane(Pos tileAlignment){
